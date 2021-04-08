@@ -5,6 +5,13 @@ module.exports = {
   presets: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    extend: {
+      colors: {
+        'primary': '#F73859',
+        'secondary': '#DBEDF3',
+        'tertiary': '#33425B',
+      }
+    },
     screens: {
       sm: '640px',
       md: '768px',
@@ -15,7 +22,6 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-
       black: colors.black,
       white: colors.white,
       gray: colors.coolGray,
@@ -26,6 +32,11 @@ module.exports = {
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
+      brand: {
+        primary: "#F73859",
+        secondary: "#DBEDF3",
+        tertiary: "#33425B",
+      },
     },
     spacing: {
       px: '1px',
