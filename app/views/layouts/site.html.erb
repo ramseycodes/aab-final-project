@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DotRamseyFinal</title>
+    <title>All Aboard Bootcamp :: dotRamsey's Final project</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -14,14 +14,6 @@
   </head>
 
   <body class="font-sans subpixel-antialiased">
-    <p id=”notice”><%= notice %></p>
-    <div class="flex">
-      <div class="w-3/12 h-screen p-12 bg-gray-100">
-        <%= render partial: "sidebar" %>
-      </div>
-      <div class="w-10/12 h-screen">
-        <%= yield %>
-      </div>
-    </div>
+    <%= yield %>
   </body>
 </html>

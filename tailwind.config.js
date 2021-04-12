@@ -7,10 +7,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary': '#F73859',
-        'secondary': '#DBEDF3',
-        'tertiary': '#33425B',
-      }
+        brand: {
+          primary: "#F73859",
+          secondary: "#DBEDF3",
+          tertiary: "#33425B",
+        },
+      },
     },
     screens: {
       sm: '640px',
@@ -32,11 +34,6 @@ module.exports = {
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
-      brand: {
-        primary: "#F73859",
-        secondary: "#DBEDF3",
-        tertiary: "#33425B",
-      },
     },
     spacing: {
       px: '1px',
@@ -246,7 +243,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
-        'Inter var',
+        'Roboto',
         'ui-sans-serif',
         'system-ui',
         '-apple-system',

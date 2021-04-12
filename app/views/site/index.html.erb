@@ -1,46 +1,85 @@
+<p id=”notice”><%= notice %></p>
 <div class="h-auto bg-gradient-to-b from-blue-400 to-white">
     <div class="container mx-auto">
-        <header class="items-center content-center text-center">
-            <nav class="float-right p-10">
-                <ul class="flex">
-                    <li class="mr-10"><%= link_to "Home", :root %></li>
-                    <li class="mr-10"><%= link_to "Login", "" %></li>
-                    <li><%= link_to "Sign Up", "" %></li>
-                </ul>
-            </nav>
-            <%= image_tag "Logo.png", class: "block pt-40 mx-auto" %>
-            <h1 class="mx-auto text-brand-primary">Final Project</h1>
-            <p>Tired of loosing the content you find on the Internet? Final Project offers a solution</p>
-            <button>Try it out for free</button>
+        <header class="text-center">
+            <div class="flex justify-end">
+                <nav class="p-10">
+                    <ul class="flex">
+                        <li class="mr-10"><%= link_to "Home", :root %></li>
+                        <% if current_user %>
+                            <li class="mr-10">Logged in as <%= current_user.email %></li>
+                            <li class="mr-10"><%= link_to "Dashboard", :app %></li>
+                            <li><%= link_to "Log Out", :logout %></li>
+                        <% else %>
+                            <li class="mr-10"><%= link_to "Sign up", :signup %></li>
+                            <li><%= link_to "Log In", :login %></li>
+                        <% end %>
+                    </ul>
+                </nav>
+            </div>
+            <div class="flex justify-center">
+                <%= image_tag "Logo.png", class: "pt-32" %>
+            </div>
+            <h1 class="my-8 text-brand-primary text-7xl">Final Project</h1>
+            <p class="text-2xl text-brand-tertiary">Tired of loosing the <span class="text-brand-primary">content</span> you find on the <span class="text-brand-primary">Internet</span>? Final Project offers a <span class="text-brand-primary">solution</span></p>
+            <button class="block px-4 py-3 mx-auto my-8 text-white rounded-md shadow bg-brand-tertiary">Try it out for free</button>
         </header>
-        <div>
+        <div class="flex justify-center pt-8">
             <%= image_tag "Browser.png" %>
         </div>
     </div>
 </div>
 <div class="container mx-auto">
-    <h2>What can you collect?</h2>
-    <div>
+    <div class="flex justify-center py-16">
+        <h2 class="text-5xl">What can you collect?</h2>
+    </div>
+    <div class="grid grid-cols-4">
         <div>
-            Images
+            <div class="flex">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="#F73859" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8.5 10C9.32843 10 10 9.32843 10 8.5C10 7.67157 9.32843 7 8.5 7C7.67157 7 7 7.67157 7 8.5C7 9.32843 7.67157 10 8.5 10Z" stroke="#F73859" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M21 15L16 10L5 21" stroke="#F73859" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h3>Images</h3>
+            </div>
         </div>
         <div>
-            RSS Feeds
+            <div class="flex">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 11C6.38695 11 8.67613 11.9482 10.364 13.636C12.0518 15.3239 13 17.6131 13 20" stroke="#F73859" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 4C8.24346 4 12.3131 5.68571 15.3137 8.68629C18.3143 11.6869 20 15.7565 20 20" stroke="#F73859" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 20C5.55228 20 6 19.5523 6 19C6 18.4477 5.55228 18 5 18C4.44772 18 4 18.4477 4 19C4 19.5523 4.44772 20 5 20Z" stroke="#F73859" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h3>RSS Feeds</h3>
+            </div>
         </div>
         <div>
-            Videos
+            <div class="flex">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M23 7L16 12L23 17V7Z" stroke="#F73859" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14 5H3C1.89543 5 1 5.89543 1 7V17C1 18.1046 1.89543 19 3 19H14C15.1046 19 16 18.1046 16 17V7C16 5.89543 15.1046 5 14 5Z" stroke="#F73859" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h3>Videos</h3>
+            </div>
         </div>
         <div>
-            Links
+            <div class="flex">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 8.424V10.78C21.609 11.329 22 12.117 22 13V17C22 18.654 20.654 20 19 20H10C8.346 20 7 18.654 7 17V13C7 11.346 8.346 10 10 10H15V8H10C7.243 8 5 10.243 5 13V17C5 19.757 7.243 22 10 22H19C21.757 22 24 19.757 24 17V13C24 10.955 22.763 9.198 21 8.424Z" fill="#F8516E"/>
+                    <path d="M14 2H5C2.243 2 0 4.243 0 7V11C0 13.045 1.237 14.802 3 15.576V13.22C2.391 12.67 2 11.883 2 11V7C2 5.346 3.346 4 5 4H14C15.654 4 17 5.346 17 7V11C17 12.654 15.654 14 14 14H9V16H14C16.757 16 19 13.757 19 11V7C19 4.243 16.757 2 14 2Z" fill="#F8516E"/>
+                </svg>
+                <h3>Links</h3>
+            </div>
         </div>
     </div>
     <h3>What made me make Final Project</h3>
     <p>
         Random text
     </p>
-    <div>
-        <h2>Final Call to action</h2>
-        <button>Try it out for free</button>
+    <div class="flex justify-center">
+        <h2 class="block">Final Call to action</h2>
+        <button class="block">Try it out for free</button>
     </div>
 </div>
 <footer>

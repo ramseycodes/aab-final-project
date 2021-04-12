@@ -1,0 +1,18 @@
+<div class="flex">
+    <div><%= image_tag 'Logo.png', width: "50px", class: "block" %></div>
+    <div class="pt-2 pl-2"><h1 class="ml-2 text-2xl">Final Project</h1></div>
+</div>
+
+<nav class="mt-16">
+    <%= link_to "Dashboard", :app %>
+
+</nav>
+
+<% if current_user %>
+    <li class="mr-10">Logged in as <%= current_user.email %></li>
+    <li class="mr-10"><%= link_to "Dashboard", :app %></li>
+    <li><%= link_to "Log Out", :logout %></li>
+<% else %>
+    <li class="mr-10"><%= link_to "Sign up", :signup %></li>
+    <li><%= link_to "Log In", :login %></li>
+<% end %>
