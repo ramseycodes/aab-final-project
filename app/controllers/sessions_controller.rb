@@ -1,9 +1,13 @@
 class SessionsController < ApplicationController
-  layout false
+  layout "authentication"
+
   def new
+    @title = "Login"
   end
 
   def create
+
+
     user = User.find_by_email(params[:email])
 
     if user && user.authenticate(params[:password])

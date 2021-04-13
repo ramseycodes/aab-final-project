@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
+    @title = "Signup"
     @user = User.new
   end
 
