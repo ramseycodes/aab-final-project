@@ -1,8 +1,4 @@
-const { webpackConfig } = require('@rails/webpacker')
-const customConfig = {
-  resolve: {
-    extensions: ['.css']
-  }
-}
+const { webpackConfig, merge } = require('@rails/webpacker')
+const customConfig = require('./custom')
 
-module.exports = webpackConfig
+module.exports = merge(webpackConfig, customConfig)
