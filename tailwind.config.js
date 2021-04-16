@@ -2,7 +2,9 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   mode: 'jit',
-  purge: [],
+  purge: [
+    'app/views/**/*.html.erb',
+  ],
   presets: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -994,10 +996,10 @@ module.exports = {
               maxWidth: '1024px',
             },
             '@screen xl': {
-              maxWidth: '380px',
+              maxWidth: '1024px',
             },
             '@screen 2xl': {
-              maxWidth: '180px',
+              maxWidth: '1024px',
             },
           }
         })
