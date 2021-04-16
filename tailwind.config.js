@@ -5,15 +5,6 @@ module.exports = {
   presets: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    container: {
-      screens: {
-        sm: "100%",
-        md: "100%",
-        lg: "1024px",
-        xl: "1024px",
-        '2xl': `1024px`,
-      },
-    },
     extend: {
       colors: {
         brand: {
@@ -977,9 +968,38 @@ module.exports = {
     wordBreak: ['responsive'],
     zIndex: ['responsive', 'focus-within', 'focus'],
   },
+  corePlugins: {
+    container: false
+  },
   plugins: [
       require('@tailwindcss/forms'),
       require('@tailwindcss/typography'),
       require('@tailwindcss/aspect-ratio'),
+      function ({ addComponents }) {
+        addComponents({
+          '.container': {
+            width: '100%',
+            // marginLeft: 'auto',
+            // marginRight: 'auto',
+            // paddingLeft: '2rem',
+            // paddingRight: '2rem',
+            '@screen sm': {
+              maxWidth: '640px',
+            },
+            '@screen md': {
+              maxWidth: '768px',
+            },
+            '@screen lg': {
+              maxWidth: '1024px',
+            },
+            '@screen xl': {
+              maxWidth: '380px',
+            },
+            '@screen 2xl': {
+              maxWidth: '180px',
+            },
+          }
+        })
+      }
   ],
 }
