@@ -13,9 +13,9 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="font-sans subpixel-antialiased">
+  <body class="flex h-screen font-sans subpixel-antialiased bg-gradient-to-b from-brand-tertiary to-white">
     <p id=”notice”><%= notice %></p>
-    <div class="w-10/12 h-screen">
+    <div class="w-3/12 h-auto p-20 m-auto mx-auto text-center bg-white rounded-lg shadow">
       <%= yield %>
     </div>
   </body>

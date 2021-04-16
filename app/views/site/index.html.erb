@@ -7,7 +7,6 @@
                     <ul class="flex">
                         <li class="mr-10"><%= link_to "Home", :root %></li>
                         <% if current_user %>
-                            <li class="mr-10">Logged in as <%= current_user.email %></li>
                             <li class="mr-10"><%= link_to "Dashboard", :app %></li>
                             <li><%= link_to "Log Out", :logout %></li>
                         <% else %>
@@ -86,6 +85,6 @@
     <div class="container mx-auto">
         <div class="float-left">copyright</div>
         <div class="">made</div>
-        <div class="float-right">go to top</div>
+        <div class="float-right"><a href="#top" >go to top</a></div>
     </div>
 </footer>

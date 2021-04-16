@@ -4,15 +4,38 @@
 </div>
 
 <nav class="mt-16">
-    <%= link_to "Dashboard", :app %>
+    <ul>
+        <li>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline-block">
+                <path d="M12 3V6" stroke="#212121" stroke-width="2" stroke-miterlimit="10"/>
+                <path d="M19.778 6.222L17.657 8.343" stroke="#212121" stroke-width="2" stroke-miterlimit="10"/>
+                <path d="M23 14H20" stroke="#212121" stroke-width="2" stroke-miterlimit="10"/>
+                <path d="M7 9L10.586 12.586" stroke="#212121" stroke-width="2" stroke-miterlimit="10"/>
+                <path d="M1 14H4" stroke="#212121" stroke-width="2" stroke-miterlimit="10"/>
+                <path d="M12 16C13.1046 16 14 15.1046 14 14C14 12.8954 13.1046 12 12 12C10.8954 12 10 12.8954 10 14C10 15.1046 10.8954 16 12 16Z" stroke="#212121" stroke-width="2" stroke-miterlimit="10"/>
+                <path d="M20.485 21C22.056 19.098 23 16.659 23 14C23 7.925 18.075 3 12 3C5.925 3 1 7.925 1 14C1 16.659 1.944 19.098 3.515 21H20.485Z" stroke="#212121" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
+            </svg>
+            <%= link_to "Dashboard", :app, class: "inline-block" %>
+        </li>
+        <li>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline-block">
+                <path d="M21 8V21H3V8" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M1 3H23V8H1V3Z" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 12H14" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <%= link_to 'Library', :library, class: "inline-block" %>
+        </li>
+    </ul>
+
 
 </nav>
 
-<% if current_user %>
-    <li class="mr-10">Logged in as <%= current_user.email %></li>
-    <li class="mr-10"><%= link_to "Dashboard", :app %></li>
-    <li><%= link_to "Log Out", :logout %></li>
-<% else %>
-    <li class="mr-10"><%= link_to "Sign up", :signup %></li>
-    <li><%= link_to "Log In", :login %></li>
-<% end %>
+<ul class="fixed left-10 bottom-10">
+    <li class="mr-10"><%= current_user.name %> <%= current_user.last_name %></li>
+    <li>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline-block">
+            <path d="M17 7L15.59 8.41L18.17 11H8V13H18.17L15.59 15.58L17 17L22 12L17 7ZM4 5H12V3H4C2.9 3 2 3.9 2 5V19C2 20.1 2.9 21 4 21H12V19H4V5Z" fill="#212121"/>
+        </svg>
+        <%= link_to "Logout", :logout, class: "inline-block" %>
+    </li>
+</ul>

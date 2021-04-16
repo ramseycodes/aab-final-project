@@ -5,11 +5,12 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :items, only: [:create, :destroy]
 
   get "/signup", controller: "users", action: "new", as: :signup
   get "/login", controller: "sessions", action: "new", as: :login
   get "/logout", controller: "sessions", action: "destroy", as: :logout
 
   get "/dashboard", controller: "app", action: "index", as: :app
-
+  get "/library", controller: "app", action: "library", as: :library
 end

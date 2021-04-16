@@ -11,22 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+  <div class="mt-10 text-left">
+    <%= form.label :name, class: "text-base uppercase block w-auto" %>
+    <%= form.text_field :name, class: "w-full" %>
   </div>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+  <div class="mt-10 text-left">
+    <%= form.label :last_name, class: "text-base uppercase block w-auto" %>
+    <%= form.text_field :last_name, class: "w-full" %>
   </div>
 
-  <div class="field">
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
+  <div class="mt-10 text-left">
+    <%= form.label :email, class: "text-base uppercase block w-auto" %>
+    <%= form.text_field :email, class: "w-full" %>
+  </div>
+
+  <div class="mt-10 text-left">
+    <%= form.label :password, class: "text-base uppercase block w-auto" %>
+    <%= form.password_field :password, class: "w-full" %>
+  </div>
+
+  <div class="mt-10 text-left">
+    <%= form.label :password_confirmation, class: "text-base uppercase block w-auto" %>
+    <%= form.password_field :password_confirmation, class: "w-full" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Signup", class: "w-full py-3 mt-10 rounded bg-brand-primary" %>
   </div>
 <% end %>

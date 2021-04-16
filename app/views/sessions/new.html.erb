@@ -1,19 +1,25 @@
 <p id="alert"><%= alert %></p>
-
-<h1>Login</h1>
+<div class="flex justify-center w-auto">
+    <div class="pt-3 align-middle">
+        <%= image_tag 'Logo.png', width: "25px", height: "25px" %>
+    </div>
+    <div class="align-middle">
+        <h1 class="text-5xl">Login</h1>
+    </div>
+</div>
 
 <%= form_tag sessions_path do | f | %>
-    <div class="field">
-        <%= label_tag :email %>
-        <%= text_field_tag :email %>
+    <div class="mt-10 text-left">
+        <%= label_tag :email, nil, class: "text-base uppercase block w-auto" %>
+        <%= text_field_tag :email, nil, class: "w-full" %>
     </div>
 
-    <div class="field">
-        <%= label_tag :password %>
-        <%= password_field_tag :password %>
+    <div class="mt-10 text-left">
+        <%= label_tag :password, nil, class: "text-base uppercase block w-auto" %>
+        <%= password_field_tag :password, nil, class: "w-full" %>
     </div>
 
-    <div class="actions">
-        <%= submit_tag "Login" %>
+    <div>
+        <%= submit_tag "Login", class: "w-full py-3 mt-10 rounded bg-brand-primary" %>
     </div>
 <% end %>
